@@ -1,0 +1,56 @@
+@media screen and (min-width: 1000px) {
+    #board {
+        display: grid;
+        grid-template-columns: repeat(8, 50px);
+        grid-template-rows: repeat(8, 50px);
+        gap: 0;
+        width: 400px;
+        height: 400px;
+
+    }
+
+    .square {
+        height: 50px;
+        width: 50px;
+        position: relative;
+    }
+
+    .square svg {
+        height: 42px;
+        width: 42px;
+        padding: 4px;
+        position: relative;
+        z-index: -10;
+    }
+
+    path {
+        position: relative;
+        z-index: -11;
+    }
+
+    .piece {
+        position: relative;
+        z-index: 10;
+    }
+
+    .white {
+        fill: white;
+    }
+
+    .black {
+        fill: black;
+    }
+
+    .black_square {
+        background-color: saddlebrown;
+    }
+
+    .white_square {
+        background-color: sandybrown;
+    }
+}
+@media screen and (max-width: 999px) {
+    body{
+        display: none;
+    }
+}
