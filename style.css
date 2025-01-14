@@ -1,4 +1,4 @@
-@media screen and (min-width: 1000px) {
+/*@media screen and (min-width: 1000px) {*/
     #board {
         display: grid;
         grid-template-columns: repeat(8, 50px);
@@ -48,7 +48,7 @@
     .white_square {
         background-color: sandybrown;
     }
-}
+/*}*/
 /*@media screen and (max-width: 999px) {*/
 /*    body{*/
 /*        display: none;*/
