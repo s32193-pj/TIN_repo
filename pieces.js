@@ -31,6 +31,15 @@ function subtract_arrays(current_coordinates, ending_coordinates) {
     return result = current_coordinates.map((x, i) => x - ending_coordinates[i])
 }
 
+function compare_arrays(array1, array2) {
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i] !== array2[i]) {
+            return false
+        }
+    }
+    return true
+}
+
 
 function king_move_validation(startingPosition, endingPosition) {
     let current_coordinates = find_coordinates(startingPosition)
@@ -96,29 +105,35 @@ function knight_move_validation(startingPosition, endingPosition) {
     }
 }
 
-function pawn_move_validation(startingPosition, endingPosition) {
+function pawn_move_validation(startingPosition, endingPosition, target) {
     let current_coordinates = find_coordinates(startingPosition)
     let ending_coordinates = find_coordinates(endingPosition)
     let coordinates_difference = subtract_arrays(current_coordinates, ending_coordinates)
     console.log(coordinates_difference)
     console.log(current_coordinates)
     console.log(ending_coordinates)
+    console.log(compare_arrays(ending_coordinates,[-1,1]))
+    console.log(compare_arrays(ending_coordinates,[-1,-1]))
 
-    if(startingPosition <= 15 && startingPosition >= 8){
-        if (coordinates_difference[0] === -1 && coordinates_difference[1] === 0 ) {
+    if (target.classList.contains("piece")) {
+        console.log("oh hi mark")
+        if (compare_arrays(ending_coordinates,[-1,1]) || compare_arrays(ending_coordinates,[-1,-1])) {
             return true
-        } else if (coordinates_difference[0] === -2 && coordinates_difference[1] === 0) {
+        }
+    } else if (!target.classList.contains("piece")) {
+        if (startingPosition <= 15 && startingPosition >= 8) {
+            if (coordinates_difference[0] === -1 && coordinates_difference[1] === 0) {
+                return true
+            } else if (coordinates_difference[0] === -2 && coordinates_difference[1] === 0) {
+                return true
+            } else {
+                return false
+            }
+        } else if (coordinates_difference[0] === -1 && coordinates_difference[1] === 0) {
             return true
-        }else{
+        } else {
             return false
         }
-    }else if (coordinates_difference[0] === -1 && coordinates_difference[1] === 0) {
-        return true
-    }else if (endingPosition.classList.contains("piece")){
-        // if(ending_coordinates[0] ===)
-    }
-    else {
-        return false
     }
 
 }

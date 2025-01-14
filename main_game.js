@@ -196,7 +196,7 @@ function check_if_piece_move_valid(target) {
     }
     if (draggedPiece.getAttribute("id") === "pawn") {
         console.log(startID, targetID, "you are here")
-        if (pawn_move_validation(startID, targetID)) {
+        if (pawn_move_validation(startID, targetID, target)) {
             console.log("correct move")
             return true
         } else {

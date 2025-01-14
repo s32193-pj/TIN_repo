@@ -49,8 +49,8 @@
         background-color: sandybrown;
     }
 }
-@media screen and (max-width: 999px) {
-    body{
-        display: none;
-    }
-}
+/*@media screen and (max-width: 999px) {*/
+/*    body{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
