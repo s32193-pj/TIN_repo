@@ -17,10 +17,10 @@ const board_2d_array = [
     [56, 57, 58, 59, 60, 61, 62, 63]
 ]
 
-function find_coordinates(startingPosition, endingPosition) {
+function find_coordinates(coordinate) {
     for (let i = 0; i < board_2d_array.length; i++) {
         for (let k = 0; k < board_2d_array[i].length; k++) {
-            if (board_2d_array[i][k] === startingPosition) {
+            if (board_2d_array[i][k] === coordinate) {
                 return [i, k]
             }
         }

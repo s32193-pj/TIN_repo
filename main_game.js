@@ -55,7 +55,7 @@ function set_board() {
 set_board();
 
 const all_divs = document.querySelectorAll("div")
-all_divs.forEach((element, k) => {
+all_divs.forEach((element) => {
     element.addEventListener("dragstart", dragstart)
     element.addEventListener("dragover", dragover)
     element.addEventListener("drop", dragdrop)
