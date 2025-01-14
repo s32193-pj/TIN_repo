@@ -34,6 +34,7 @@ function subtract_arrays(current_coordinates, ending_coordinates) {
 function compare_arrays(array1, array2) {
     for (let i = 0; i < array1.length; i++) {
         if (array1[i] !== array2[i]) {
+            console.log(`Mismatch at index ${i}: ${array1[i]} !== ${array2[i]}`);
             return false
         }
     }
@@ -112,12 +113,11 @@ function pawn_move_validation(startingPosition, endingPosition, target) {
     console.log(coordinates_difference)
     console.log(current_coordinates)
     console.log(ending_coordinates)
-    console.log(compare_arrays(ending_coordinates,[-1,1]))
-    console.log(compare_arrays(ending_coordinates,[-1,-1]))
+
 
     if (target.classList.contains("piece")) {
         console.log("oh hi mark")
-        if (compare_arrays(ending_coordinates,[-1,1]) || compare_arrays(ending_coordinates,[-1,-1])) {
+        if (compare_arrays(coordinates_difference,[-1,1]) || compare_arrays(coordinates_difference,[-1,-1])) {
             return true
         }
     } else if (!target.classList.contains("piece")) {
