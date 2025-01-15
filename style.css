@@ -1,4 +1,59 @@
-/*@media screen and (min-width: 1000px) {*/
+@media only screen and (max-width: 599px) {
+    /*phone*/
+    #board {
+        display: grid;
+        grid-template-columns: repeat(8, 30px);
+        grid-template-rows: repeat(8, 30px);
+        gap: 0;
+        width: 240px;
+        height: 240px;
+        vertical-align: top;
+        padding-left: 20px;
+        padding-top: 20px;
+
+    }
+
+    #display {
+        width: 100%;
+        padding-top: 20px;
+        position: relative;
+        height: 200px;
+        vertical-align: middle;
+    }
+
+    #player_display {
+        position: absolute;
+        vertical-align: top;
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+    }
+
+    #messages {
+        padding: 20px;
+        position: absolute;
+        vertical-align: bottom;
+        font-size: 10px;
+        font-weight: normal;
+        color: white;
+    }
+
+    .square {
+        height: 30px;
+        width: 30px;
+        position: relative;
+    }
+
+    .square svg {
+        height: 26px;
+        width: 26px;
+        padding: 2px;
+        position: relative;
+        z-index: -10;
+    }
+}
+@media only screen and (min-width: 600px) {
+    /*tablet*/
     #board {
         display: grid;
         grid-template-columns: repeat(8, 50px);
@@ -6,7 +61,35 @@
         gap: 0;
         width: 400px;
         height: 400px;
+        float: left;
+        padding-left: 70px;
+        padding-top: 70px;
 
+    }
+
+    #display {
+        text-align: center;
+        float: right;
+        position: relative;
+        padding-right: 50px;
+        height: 300px;
+        width: 300px;
+    }
+
+    #player_display {
+        float: left;
+        vertical-align: top;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+
+    #messages {
+        float: left;
+        vertical-align: bottom;
+        font-size: 20px;
+        font-weight: normal;
+        color: white;
     }
 
     .square {
@@ -22,35 +105,89 @@
         position: relative;
         z-index: -10;
     }
+}
+@media only screen and (min-width: 768px) {
+    /*desktop*/
+    #board {
+        display: grid;
+        grid-template-columns: repeat(8, 70px);
+        grid-template-rows: repeat(8, 70px);
+        gap: 0;
+        width: 560px;
+        height: 560px;
+        float: left;
+        padding-left: 100px;
+        padding-top: 100px;
 
-    path {
+    }
+
+    #display {
+        text-align: center;
+        float: right;
         position: relative;
-        z-index: -11;
+        padding-right: 100px;
+        height: 400px;
+        width: 400px;
     }
 
-    .piece {
+    #player_display {
+        float: left;
+        vertical-align: top;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+
+    #messages {
+        float: left;
+        vertical-align: bottom;
+        font-size: 30px;
+        font-weight: normal;
+        color: white;
+    }
+
+    .square {
+        height: 70px;
+        width: 70px;
         position: relative;
-        z-index: 10;
     }
 
-    .white {
-        fill: white;
+    .square svg {
+        height: 62px;
+        width: 62px;
+        padding: 4px;
+        position: relative;
+        z-index: -10;
     }
+}
 
-    .black {
-        fill: black;
-    }
+body{
+    background-image: url("background.jfif");
+}
 
-    .black_square {
-        background-color: saddlebrown;
-    }
+path {
+    position: relative;
+    z-index: -11;
+}
 
-    .white_square {
-        background-color: sandybrown;
-    }
-/*}*/
-/*@media screen and (max-width: 999px) {*/
-/*    body{*/
-/*        display: none;*/
-/*    }*/
-/*}*/
+
+.piece {
+    position: relative;
+    z-index: 10;
+}
+
+.white {
+    fill: white;
+}
+
+.black {
+    fill: black;
+}
+
+.black_square {
+    background-color: saddlebrown;
+}
+
+.white_square {
+    background-color: sandybrown;
+}

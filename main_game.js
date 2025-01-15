@@ -113,7 +113,7 @@ function dragdrop(e) {
                 if (captured_piece === true && !draggedPiece.firstChild.classList.contains(e.target.firstChild.getAttribute("class"))) {
                     e.target.firstChild.remove()
                     e.target.append(draggedPiece)
-                    msg.textContent = (playerTurn[turn_counter] + " has taken enemy opponent " + e.target.getAttribute("id"))
+                    msg.textContent = (playerTurn[turn_counter] + " has taken opponent's " + e.target.getAttribute("id"))
 
                     let dropTarget = e.target
                     if (!dropTarget.classList.contains("square")) {
